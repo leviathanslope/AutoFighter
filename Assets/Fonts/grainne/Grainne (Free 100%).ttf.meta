@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: c504a99418bf17a4aa59dbdd318a7a3a
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Grainne
+  fontNames:
+  - Grainne
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: d0b49d9805976f04dba3c8434c433cd0, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
