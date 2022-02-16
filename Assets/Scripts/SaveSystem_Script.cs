@@ -7,7 +7,7 @@ using System.IO;
 
 public static class SaveSystem_Script
 {
-    /* public static void SaveState(Player player)
+     public static void SaveState(AutoBattlerController_scr player)
     {
         BinaryFormatter bf = new BinaryFormatter();
         FileStream stream = new FileStream(Application.persistentDataPath + "/gameSave.sav", FileMode.Create);
@@ -16,9 +16,9 @@ public static class SaveSystem_Script
 
         bf.Serialize(stream, data);
         stream.Close();
-    } */
+    }
 
-    /*public static int[] LoadState()
+    public static GameObject[] LoadState()
     {
         if (File.Exists(Application.persistentDataPath + "/gameSave.sav"))
         {
@@ -26,23 +26,34 @@ public static class SaveSystem_Script
             FileStream stream = new FileStream(Application.persistentDataPath + "/gameSave.sav", FileMode.Open);
 
             PlayerData data = bf.Deserialize(stream) as PlayerData;
+
             stream.Close();
-            return data.stats;
+            return data.objects;
+        } else
+        {
+            return new GameObject[6];
         }
-    } */
+    }
 }
 
 [Serializable]
 public class PlayerData
 {
-    public int[] stats;
-    
-    public PlayerData()
+    public GameObject[] objects;
+    public GameObject FU;
+    public GameObject BLU;
+    public GameObject BRU;
+    public GameObject EFU;
+    public GameObject ELU;
+    public GameObject ERU;
+    public PlayerData(AutoBattlerController_scr player)
     {
-        stats = new int[4];
-        //stats[0] = player.type;
-        //stats[1] = player.health;
-        //stats[2] = player.attack;
-        //stats[3] = player.position;
+        objects = new GameObject[6];
+        objects[0] = player.FrontU;
+        objects[1] = player.BackLU;
+        objects[2] = player.BackRU;
+        objects[3] = player.FrontE;
+        objects[4] = player.BackLE;
+        objects[5] = player.BackRE;
     }
 }

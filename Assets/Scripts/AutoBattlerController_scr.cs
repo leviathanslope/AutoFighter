@@ -5,12 +5,12 @@ using UnityEngine;
 public class AutoBattlerController_scr : MonoBehaviour
 {
 
-    [SerializeField] GameObject FrontU;
-    [SerializeField] GameObject BackLU;
-    [SerializeField] GameObject BackRU;
-    [SerializeField] GameObject FrontE;
-    [SerializeField] GameObject BackLE;
-    [SerializeField] GameObject BackRE;
+    [SerializeField] public GameObject FrontU;
+    [SerializeField] public GameObject BackLU;
+    [SerializeField] public GameObject BackRU;
+    [SerializeField] public GameObject FrontE;
+    [SerializeField] public GameObject BackLE;
+    [SerializeField] public GameObject BackRE;
 
     float FUA;
     float FUH;
@@ -38,9 +38,20 @@ public class AutoBattlerController_scr : MonoBehaviour
     {
         actionTick = 0;
 
+        LoadStats();
+
         getAttributes();
     }
-
+    void LoadStats()
+    {
+        GameObject[] loadedObjects = SaveSystem_Script.LoadState();
+        FrontU = loadedObjects[0];
+        BackLU = loadedObjects[1];
+        BackRU = loadedObjects[2];
+        FrontE = loadedObjects[3];
+        BackLE = loadedObjects[4];
+        BackRE = loadedObjects[5];
+    }
     void getAttributes()
     {
         FUA = FrontU.GetComponent<UnitManager_scr>().attack;
