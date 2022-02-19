@@ -5,8 +5,11 @@ using System;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.IO;
 
+
+/*
 public static class SaveSystem_Script
 {
+
      public static void SaveState(AutoBattlerController_scr player)
     {
         BinaryFormatter bf = new BinaryFormatter();
@@ -48,6 +51,7 @@ public class PlayerData
     public GameObject ERU;
     public PlayerData(AutoBattlerController_scr player)
     {
+
         objects = new GameObject[6];
         objects[0] = player.FrontU;
         objects[1] = player.BackLU;
@@ -57,3 +61,4 @@ public class PlayerData
         objects[5] = player.BackRE;
     }
 }
+*/

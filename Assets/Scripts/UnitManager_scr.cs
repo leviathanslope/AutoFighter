@@ -5,42 +5,79 @@ using UnityEngine;
 public class UnitManager_scr : MonoBehaviour
 {
 
-    public float health;
-    public float attack;
+    public int _boardPos;
+    public string _side;
 
     // Start is called before the first frame update
     void Start()
     {
-        if (gameObject.tag == "Archer")
+        _sideDeclaration();
+        _boardPosDeclaration();
+        //print(gameObject.name + ",   Position is: " + _boardPos +  ", unit is:" + _side);
+    }
+
+
+    void _sideDeclaration()
+    {
+        // Checking if the unit will be labled a friednly unit or enemy
+        if (transform.position.y > 0)
         {
-            health = 1;
-            attack = 3;
+            _side = "Enemy";
         }
-        if (gameObject.tag == "Healer")
+
+        if (transform.position.y < 0)
         {
-            health = 2;
-            attack = 1;
-        }
-        if (gameObject.tag == "Mage")
-        {
-            health = 1;
-            attack = 1;
-        }
-        if (gameObject.tag == "ShieldBearer")
-        {
-            health = 3;
-            attack = 1;
-        }
-        if (gameObject.tag == "Swordsman")
-        {
-            health = 2;
-            attack = 2;
+            _side = "Friendly";
         }
     }
 
-    // Update is called once per frame
-    void Update()
+    /// <summary>
+    /// 
+    /// _boardPosDeclaration is making a grid and checking where the gameobject is within it. 
+    /// Depending on where the gameObject is on grid the controller knows if its in pos 1 2 3 or 4.
+    /// 
+    /// 
+    /// </summary>
+    void _boardPosDeclaration()
     {
-        
+        if (_side == "Enemy")
+        {
+            if (transform.position.x < 0 && transform.position.y < 1.5)
+            {
+                _boardPos = 1;
+            }
+            if (transform.position.x > 0 && transform.position.y < 1.5)
+            {
+                _boardPos = 2;
+            }
+            if (transform.position.x < 0 && transform.position.y > 1.5)
+            {
+                _boardPos = 3;
+            }
+            if (transform.position.x > 0 && transform.position.y > 1.5)
+            {
+                _boardPos = 4;
+            }
+        }
+
+        if (_side == "Friendly")
+        {
+            if (transform.position.x < 0 && transform.position.y > -1.5)
+            {
+                _boardPos = 1;
+            }
+            if (transform.position.x > 0 && transform.position.y > -1.5)
+            {
+                _boardPos = 2;
+            }
+            if (transform.position.x < 0 && transform.position.y < -1.5)
+            {
+                _boardPos = 3;
+            }
+            if (transform.position.x > 0 && transform.position.y < -1.5)
+            {
+                _boardPos = 4;
+            }
+        }
     }
 }
