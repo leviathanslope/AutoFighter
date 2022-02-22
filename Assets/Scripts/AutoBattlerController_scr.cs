@@ -38,19 +38,12 @@ public class AutoBattlerController_scr : MonoBehaviour
     {
         actionTick = 0;
 
-        LoadStats();
+        //LoadStats();
 
         getAttributes();
     }
     void LoadStats()
     {
-        GameObject[] loadedObjects = SaveSystem_Script.LoadState();
-        FrontU = loadedObjects[0];
-        BackLU = loadedObjects[1];
-        BackRU = loadedObjects[2];
-        FrontE = loadedObjects[3];
-        BackLE = loadedObjects[4];
-        BackRE = loadedObjects[5];
     }
     void getAttributes()
     {
