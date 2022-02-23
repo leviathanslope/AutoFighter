@@ -14,7 +14,7 @@ public class AutoBattlerController_scr : MonoBehaviour
     {
         _actionTick = 0;
 
-        LoadStats();
+        //LoadStats();
 
         getAttributes();
     }
