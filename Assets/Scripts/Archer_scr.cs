@@ -4,17 +4,20 @@ using UnityEngine;
 
 public class Archer_scr : MonoBehaviour
 {
-    public float damage = 3;
-    public float health = 1;
-
     string _side;
     int _boardPos;
+
+    float _health;
+    float _damage;
 
     // Start is called before the first frame update
     void Start()
     {
         _boardPos = gameObject.GetComponent<UnitManager_scr>()._boardPos;
         _side = gameObject.GetComponent<UnitManager_scr>()._side;
+
+        _health = gameObject.GetComponent<UnitManager_scr>()._health;
+        _damage = gameObject.GetComponent<UnitManager_scr>()._damage;
     }
 
     //called if gameObject in board position 1
@@ -26,47 +29,65 @@ public class Archer_scr : MonoBehaviour
             //asking if an enemy in Position 3 exist
             if (GameObject.Find("EPos3") != null)
             {
-                
+                GameObject _attacking = GameObject.Find("EPos3");
 
+                _attacking.GetComponent<UnitManager_scr>()._health -= _damage;
 
             }
             //asking if an enemy exist in pos 4
             else if (GameObject.Find("EPos4") != null)
             {
+                GameObject _attacking = GameObject.Find("EPos4");
+
+                _attacking.GetComponent<UnitManager_scr>()._health -= _damage;
 
             }
             //asking if an enemy exist in pos 1
             else if (GameObject.Find("EPos1") != null)
             {
+                GameObject _attacking = GameObject.Find("EPos1");
+
+                _attacking.GetComponent<UnitManager_scr>()._health -= _damage;
 
             }
             //asking if an enemy exist in pos 2
             else if (GameObject.Find("EPos2") != null)
             {
+                GameObject _attacking = GameObject.Find("EPos2");
+
+                _attacking.GetComponent<UnitManager_scr>()._health -= _damage;
 
             }
         }
         else
         {
-            //asking if an enemy in Position 3 exist
+            //asking if a friend is in Position 3 exist
             if (GameObject.Find("FPos3") != null)
             {
+                GameObject _attacking = GameObject.Find("FPos3");
 
+                _attacking.GetComponent<UnitManager_scr>()._health -= _damage;
             }
-            //asking if an enemy exist in pos 4
+            //asking if a friend is exist in pos 4
             else if (GameObject.Find("FPos4") != null)
             {
+                GameObject _attacking = GameObject.Find("FPos4");
 
+                _attacking.GetComponent<UnitManager_scr>()._health -= _damage;
             }
-            //asking if an enemy exist in pos 1
+            //asking if a friend is exist in pos 1
             else if (GameObject.Find("FPos1") != null)
             {
+                GameObject _attacking = GameObject.Find("FPos1");
 
+                _attacking.GetComponent<UnitManager_scr>()._health -= _damage;
             }
-            //asking if an enemy exist in pos 2
+            //asking if a friend is exist in pos 2
             else if (GameObject.Find("FPos2") != null)
             {
+                GameObject _attacking = GameObject.Find("FPos2");
 
+                _attacking.GetComponent<UnitManager_scr>()._health -= _damage;
             }
         }
     }
@@ -74,75 +95,204 @@ public class Archer_scr : MonoBehaviour
     //called if gameObject in board position 2
     public void _pos2Combat()
     {
-        //asking if an enemy in Position 4 exist
-        if (GameObject.Find("EPos4") != null)
+        //checking if the unit is friendly
+        if (_side == "Friendly")
         {
+            //asking if an enemy in Position 4 exist
+            if (GameObject.Find("EPos4") != null)
+            {
+                GameObject _attacking = GameObject.Find("EPos4");
 
+                _attacking.GetComponent<UnitManager_scr>()._health -= _damage;
+            }
+            //asking if an enemy exist in pos 3
+            else if (GameObject.Find("EPos3") != null)
+            {
+                GameObject _attacking = GameObject.Find("EPos3");
+
+                _attacking.GetComponent<UnitManager_scr>()._health -= _damage;
+            }
+            //asking if an enemy exist in pos 2
+            else if (GameObject.Find("EPos2") != null)
+            {
+                GameObject _attacking = GameObject.Find("EPos2");
+
+                _attacking.GetComponent<UnitManager_scr>()._health -= _damage;
+            }
+            //asking if an enemy exist in pos 1
+            else if (GameObject.Find("EPos1") != null)
+            {
+                GameObject _attacking = GameObject.Find("EPos1");
+
+                _attacking.GetComponent<UnitManager_scr>()._health -= _damage;
+            }
         }
-        //asking if an enemy exist in pos 3
-        else if (GameObject.Find("EPos3") != null)
+        else
         {
+            //asking if a friend is in Position 4 exist
+            if (GameObject.Find("FPos4") != null)
+            {
+                GameObject _attacking = GameObject.Find("FPos4");
 
-        }
-        //asking if an enemy exist in pos 2
-        else if (GameObject.Find("EPos2") != null)
-        {
+                _attacking.GetComponent<UnitManager_scr>()._health -= _damage;
+            }
+            //asking if a friend is exist in pos 3
+            else if (GameObject.Find("FPos3") != null)
+            {
+                GameObject _attacking = GameObject.Find("FPos3");
 
-        }
-        //asking if an enemy exist in pos 1
-        else if (GameObject.Find("EPos1") != null)
-        {
+                _attacking.GetComponent<UnitManager_scr>()._health -= _damage;
+            }
+            //asking if a friend is exist in pos 2
+            else if (GameObject.Find("FPos2") != null)
+            {
+                GameObject _attacking = GameObject.Find("FPos2");
 
+                _attacking.GetComponent<UnitManager_scr>()._health -= _damage;
+            }
+            //asking if a friend is exist in pos 1
+            else if (GameObject.Find("FPos1") != null)
+            {
+                GameObject _attacking = GameObject.Find("FPos1");
+
+                _attacking.GetComponent<UnitManager_scr>()._health -= _damage;
+            }
         }
     }
 
     //called if gameObject in board position 3
     public void _pos3Combat()
     {
-        //asking if an enemy in Position 1 exist
-        if (GameObject.Find("EPos1") != null)
+        //checking if the unit is friendly
+        if (_side == "Friendly")
         {
+            //asking if an enemy in Position 1 exist
+            if (GameObject.Find("EPos1") != null)
+            {
+                GameObject _attacking = GameObject.Find("EPos1");
 
+                _attacking.GetComponent<UnitManager_scr>()._health -= _damage;
+            }
+            //asking if an enemy exist in pos 2
+            else if (GameObject.Find("EPos2") != null)
+            {
+                GameObject _attacking = GameObject.Find("EPos2");
+
+                _attacking.GetComponent<UnitManager_scr>()._health -= _damage;
+            }
+            //asking if an enemy exist in pos 3
+            else if (GameObject.Find("EPos3") != null)
+            {
+                GameObject _attacking = GameObject.Find("EPos3");
+
+                _attacking.GetComponent<UnitManager_scr>()._health -= _damage;
+            }
+            //asking if an enemy exist in pos 4
+            else if (GameObject.Find("EPos4") != null)
+            {
+                GameObject _attacking = GameObject.Find("EPos4");
+
+                _attacking.GetComponent<UnitManager_scr>()._health -= _damage;
+            }
         }
-        //asking if an enemy exist in pos 2
-        else if (GameObject.Find("EPos2") != null)
+        else
         {
+            //asking if a friend is in Position 1 exist
+            if (GameObject.Find("FPos1") != null)
+            {
+                GameObject _attacking = GameObject.Find("FPos1");
 
-        }
-        //asking if an enemy exist in pos 3
-        else if (GameObject.Find("EPos3") != null)
-        {
+                _attacking.GetComponent<UnitManager_scr>()._health -= _damage;
+            }
+            //asking if a friend is exist in pos 2
+            else if (GameObject.Find("FPos2") != null)
+            {
+                GameObject _attacking = GameObject.Find("FPos2");
 
-        }
-        //asking if an enemy exist in pos 4
-        else if (GameObject.Find("EPos4") != null)
-        {
+                _attacking.GetComponent<UnitManager_scr>()._health -= _damage;
+            }
+            //asking if a friend is exist in pos 3
+            else if (GameObject.Find("FPos3") != null)
+            {
+                GameObject _attacking = GameObject.Find("FPos3");
 
+                _attacking.GetComponent<UnitManager_scr>()._health -= _damage;
+            }
+            //asking if a friend is exist in pos 4
+            else if (GameObject.Find("FPos4") != null)
+            {
+                GameObject _attacking = GameObject.Find("FPos4");
+
+                _attacking.GetComponent<UnitManager_scr>()._health -= _damage;
+            }
         }
     }
 
     //called if gameObject in board position 4
     public void _pos4Combat()
     {
-        //asking if an enemy in Position 2 exist
-        if (GameObject.Find("EPos2") != null)
+        //checking if the unit is friendly
+        if (_side == "Friendly")
         {
+            //asking if an enemy in Position 2 exist
+            if (GameObject.Find("EPos2") != null)
+            {
+                GameObject _attacking = GameObject.Find("EPos2");
 
+                _attacking.GetComponent<UnitManager_scr>()._health -= _damage;
+            }
+            //asking if an enemy exist in pos 1
+            else if (GameObject.Find("EPos1") != null)
+            {
+                GameObject _attacking = GameObject.Find("EPos1");
+
+                _attacking.GetComponent<UnitManager_scr>()._health -= _damage;
+            }
+            //asking if an enemy exist in pos 4
+            else if (GameObject.Find("EPos4") != null)
+            {
+                GameObject _attacking = GameObject.Find("EPos4");
+
+                _attacking.GetComponent<UnitManager_scr>()._health -= _damage;
+            }
+            //asking if an enemy exist in pos 3
+            else if (GameObject.Find("EPos3") != null)
+            {
+                GameObject _attacking = GameObject.Find("EPos3");
+
+                _attacking.GetComponent<UnitManager_scr>()._health -= _damage;
+            }
         }
-        //asking if an enemy exist in pos 1
-        else if (GameObject.Find("EPos1") != null)
+        else 
         {
+            //asking if a friend is in Position 2 exist
+            if (GameObject.Find("FPos2") != null)
+            {
+                GameObject _attacking = GameObject.Find("FPos2");
 
-        }
-        //asking if an enemy exist in pos 4
-        else if (GameObject.Find("EPos4") != null)
-        {
+                _attacking.GetComponent<UnitManager_scr>()._health -= _damage;
+            }
+            //asking if a friend is exist in pos 1
+            else if (GameObject.Find("FPos1") != null)
+            {
+                GameObject _attacking = GameObject.Find("FPos1");
 
-        }
-        //asking if an enemy exist in pos 3
-        else if (GameObject.Find("EPos3") != null)
-        {
+                _attacking.GetComponent<UnitManager_scr>()._health -= _damage;
+            }
+            //asking if a friend is exist in pos 4
+            else if (GameObject.Find("FPos4") != null)
+            {
+                GameObject _attacking = GameObject.Find("FPos4");
 
+                _attacking.GetComponent<UnitManager_scr>()._health -= _damage;
+            }
+            //asking if a friend is exist in pos 3
+            else if (GameObject.Find("FPos3") != null)
+            {
+                GameObject _attacking = GameObject.Find("FPos3");
+
+                _attacking.GetComponent<UnitManager_scr>()._health -= _damage;
+            }
         }
     }
 }

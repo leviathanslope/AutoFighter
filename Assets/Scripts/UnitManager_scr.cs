@@ -5,6 +5,10 @@ using UnityEngine;
 public class UnitManager_scr : MonoBehaviour
 {
 
+    public float _damage;
+    public float _health;
+    public string _type;
+
     public int _boardPos;
     public string _side;
 
@@ -13,7 +17,7 @@ public class UnitManager_scr : MonoBehaviour
     {
         _sideDeclaration();
         _boardPosDeclaration();
-        //print(gameObject.name + ",   Position is: " + _boardPos +  ", unit is:" + _side);
+        _stats();
     }
 
 
@@ -45,18 +49,22 @@ public class UnitManager_scr : MonoBehaviour
             if (transform.position.x < 0 && transform.position.y < 1.5)
             {
                 _boardPos = 1;
+                gameObject.name = "EPos1";
             }
             if (transform.position.x > 0 && transform.position.y < 1.5)
             {
                 _boardPos = 2;
+                gameObject.name = "EPos2";
             }
             if (transform.position.x < 0 && transform.position.y > 1.5)
             {
                 _boardPos = 3;
+                gameObject.name = "EPos3";
             }
             if (transform.position.x > 0 && transform.position.y > 1.5)
             {
                 _boardPos = 4;
+                gameObject.name = "EPos4";
             }
         }
 
@@ -65,19 +73,63 @@ public class UnitManager_scr : MonoBehaviour
             if (transform.position.x < 0 && transform.position.y > -1.5)
             {
                 _boardPos = 1;
+                gameObject.name = "FPos1";
             }
             if (transform.position.x > 0 && transform.position.y > -1.5)
             {
                 _boardPos = 2;
+                gameObject.name = "FPos2";
             }
             if (transform.position.x < 0 && transform.position.y < -1.5)
             {
                 _boardPos = 3;
+                gameObject.name = "FPos3";
             }
             if (transform.position.x > 0 && transform.position.y < -1.5)
             {
                 _boardPos = 4;
+                gameObject.name = "FPos4";
             }
+        }
+    }
+
+    void _stats()
+    {
+        if (gameObject.tag == "Archer")
+        {
+            _health = 1;
+            _damage = 3;
+            _type = "Archer";
+        }
+        if (gameObject.tag == "ShieldBearer")
+        {
+            _health = 3;
+            _damage = 1;
+            _type = "ShieldBearer";
+        }
+        if (gameObject.tag == "Healer")
+        {
+            _health = 2;
+            _damage = 1;
+            _type = "Healer";
+        }
+        if (gameObject.tag == "Swordsman")
+        {
+            _health = 2;
+            _damage = 2;
+            _type = "Swordsman";
+        }
+        if (gameObject.tag == "Mage")
+        {
+            _health = 1;
+            _damage = 1;
+            _type = "Mage";
+        }
+        if (gameObject.tag == "Spearman")
+        {
+            _health = 2;
+            _damage = 2;
+            _type = "Spearman";
         }
     }
 }
