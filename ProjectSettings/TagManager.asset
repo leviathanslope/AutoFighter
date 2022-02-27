@@ -11,6 +11,7 @@ TagManager:
   - Swordsman
   - Enemy
   - Spearman
+  - AutoBattlerController
   layers:
   - Default
   - TransparentFX

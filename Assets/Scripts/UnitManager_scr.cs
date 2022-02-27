@@ -20,7 +20,13 @@ public class UnitManager_scr : MonoBehaviour
         _stats();
     }
 
-
+    void Update()
+    {
+        if (_health <= 0)
+        {
+            Destroy(gameObject);
+        }
+    }
     void _sideDeclaration()
     {
         // Checking if the unit will be labled a friednly unit or enemy
