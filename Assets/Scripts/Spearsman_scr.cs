@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Swordsman_scr : MonoBehaviour
+public class Spearsman_scr : MonoBehaviour
 {
     string _side;
     int _boardPos;
@@ -34,12 +34,11 @@ public class Swordsman_scr : MonoBehaviour
 
     void callForAction()
     {
-        //this might need to change later or player could get infinite health but it works now so heyoo it works now cause buff can only happen on action tick 1
         if (_actionTick > _boardPos)
         {
             _UsedAction = false;
         }
-        if (_boardPos == 4 & _actionTick == 2)
+        if (_boardPos == 4 & _actionTick == 1)
         {
             _UsedAction = false;
         }
@@ -53,12 +52,12 @@ public class Swordsman_scr : MonoBehaviour
             _UsedAction = true;
             _pos2Combat();
         }
-        if (_UsedAction == false && _actionTick == 1 && _boardPos == 3)
+        if (_UsedAction == false && _actionTick == 3 && _boardPos == 3)
         {
             _UsedAction = true;
             _pos3Combat();
         }
-        if (_UsedAction == false && _actionTick == 1 && _boardPos == 4)
+        if (_UsedAction == false && _actionTick == 4 && _boardPos == 4)
         {
             _UsedAction = true;
             _pos4Combat();
@@ -88,9 +87,9 @@ public class Swordsman_scr : MonoBehaviour
 
                 _attacking.GetComponent<UnitManager_scr>()._health -= _damage;
 
-                if (GameObject.Find("EPos2") != null)
+                if (GameObject.Find("EPos3") != null)
                 {
-                    GameObject _attacking2 = GameObject.Find("EPos2");
+                    GameObject _attacking2 = GameObject.Find("EPos3");
 
                     _attacking2.GetComponent<UnitManager_scr>()._health -= _damage / 2;
                 }
@@ -101,6 +100,13 @@ public class Swordsman_scr : MonoBehaviour
                 GameObject _attacking = GameObject.Find("EPos2");
 
                 _attacking.GetComponent<UnitManager_scr>()._health -= _damage;
+                if (GameObject.Find("EPos4") != null)
+                {
+                    GameObject _attacking2 = GameObject.Find("EPos4");
+
+                    _attacking2.GetComponent<UnitManager_scr>()._health -= _damage / 2;
+
+                }
 
             }
             //asking if an enemy exist in pos 3
@@ -109,13 +115,6 @@ public class Swordsman_scr : MonoBehaviour
                 GameObject _attacking = GameObject.Find("EPos3");
 
                 _attacking.GetComponent<UnitManager_scr>()._health -= _damage;
-                if (GameObject.Find("EPos4") != null)
-                {
-                    GameObject _attacking2 = GameObject.Find("EPos4");
-
-                    _attacking2.GetComponent<UnitManager_scr>()._health -= _damage/2;
-
-                }
 
             }
             //asking if an enemy exist in pos 4
@@ -141,45 +140,49 @@ public class Swordsman_scr : MonoBehaviour
                 _attacking.GetComponent<UnitManager_scr>()._health -= _damage;
             }
             //standard action if there are no shield bearers
-            //asking if a friend is in Position 1 exist
-            if (GameObject.Find("FPos1") != null)
+            else if (GameObject.Find("FPos1") != null)
             {
                 GameObject _attacking = GameObject.Find("FPos1");
 
                 _attacking.GetComponent<UnitManager_scr>()._health -= _damage;
-                if (GameObject.Find("FPos2") != null)
-                {
-                    GameObject _attacking2 = GameObject.Find("FPos2");
 
-                    _attacking2.GetComponent<UnitManager_scr>()._health -= _damage/2;
+                if (GameObject.Find("FPos3") != null)
+                {
+                    GameObject _attacking2 = GameObject.Find("FPos3");
+
+                    _attacking2.GetComponent<UnitManager_scr>()._health -= _damage / 2;
                 }
             }
-            //asking if a friend is exist in pos 2
+            //asking if an enemy exist in pos 2
             else if (GameObject.Find("FPos2") != null)
             {
                 GameObject _attacking = GameObject.Find("FPos2");
-
-                _attacking.GetComponent<UnitManager_scr>()._health -= _damage;
-            }
-            //asking if a friend is exist in pos 3
-            else if (GameObject.Find("FPos3") != null)
-            {
-                GameObject _attacking = GameObject.Find("FPos3");
 
                 _attacking.GetComponent<UnitManager_scr>()._health -= _damage;
                 if (GameObject.Find("FPos4") != null)
                 {
                     GameObject _attacking2 = GameObject.Find("FPos4");
 
-                    _attacking2.GetComponent<UnitManager_scr>()._health -= _damage/2;
+                    _attacking2.GetComponent<UnitManager_scr>()._health -= _damage / 2;
+
                 }
+
             }
-            //asking if a friend is exist in pos 4
+            //asking if an enemy exist in pos 3
+            else if (GameObject.Find("FPos3") != null)
+            {
+                GameObject _attacking = GameObject.Find("FPos3");
+
+                _attacking.GetComponent<UnitManager_scr>()._health -= _damage;
+
+            }
+            //asking if an enemy exist in pos 4
             else if (GameObject.Find("FPos4") != null)
             {
                 GameObject _attacking = GameObject.Find("FPos4");
 
                 _attacking.GetComponent<UnitManager_scr>()._health -= _damage;
+
             }
         }
     }
@@ -190,7 +193,7 @@ public class Swordsman_scr : MonoBehaviour
         //checking if the unit is friendly
         if (_side == "Friendly")
         {
-            //checking for shield bearers
+            //checking for shield bearer
             if (GameObject.Find("EPos1") != null && GameObject.Find("EPos1").tag == "ShieldBearer")
             {
                 GameObject _attacking = GameObject.Find("EPos1");
@@ -208,25 +211,17 @@ public class Swordsman_scr : MonoBehaviour
 
                 _attacking.GetComponent<UnitManager_scr>()._health -= _damage;
 
-                if (GameObject.Find("EPos1") != null)
+                if (GameObject.Find("EPos4") != null)
                 {
-                    GameObject _attacking2 = GameObject.Find("EPos1");
+                    GameObject _attacking2 = GameObject.Find("EPos4");
 
                     _attacking2.GetComponent<UnitManager_scr>()._health -= _damage / 2;
                 }
             }
-            //asking if an enemy exist in pos 2
+            //asking if an enemy exist in pos 1
             else if (GameObject.Find("EPos1") != null)
             {
-                GameObject _attacking = GameObject.Find("EPos1");
-
-                _attacking.GetComponent<UnitManager_scr>()._health -= _damage;
-
-            }
-            //asking if an enemy exist in pos 3
-            else if (GameObject.Find("EPos4") != null)
-            {
-                GameObject _attacking = GameObject.Find("EPos4");
+                GameObject _attacking = GameObject.Find("EPos2");
 
                 _attacking.GetComponent<UnitManager_scr>()._health -= _damage;
                 if (GameObject.Find("EPos3") != null)
@@ -239,6 +234,14 @@ public class Swordsman_scr : MonoBehaviour
 
             }
             //asking if an enemy exist in pos 4
+            else if (GameObject.Find("EPos4") != null)
+            {
+                GameObject _attacking = GameObject.Find("EPos4");
+
+                _attacking.GetComponent<UnitManager_scr>()._health -= _damage;
+
+            }
+            //asking if an enemy exist in pos 3
             else if (GameObject.Find("EPos3") != null)
             {
                 GameObject _attacking = GameObject.Find("EPos3");
@@ -249,7 +252,7 @@ public class Swordsman_scr : MonoBehaviour
         }
         else
         {
-            //checking for shield bearers
+            //checking for shield bearer
             if (GameObject.Find("FPos1") != null && GameObject.Find("FPos1").tag == "ShieldBearer")
             {
                 GameObject _attacking = GameObject.Find("FPos1");
@@ -261,30 +264,23 @@ public class Swordsman_scr : MonoBehaviour
                 _attacking.GetComponent<UnitManager_scr>()._health -= _damage;
             }
             //standard action if there are no shield bearers
-            //asking if a friend is in Position 1 exist
-            if (GameObject.Find("FPos2") != null)
+            else if (GameObject.Find("FPos2") != null)
             {
                 GameObject _attacking = GameObject.Find("FPos2");
 
                 _attacking.GetComponent<UnitManager_scr>()._health -= _damage;
-                if (GameObject.Find("FPos1") != null)
+
+                if (GameObject.Find("FPos4") != null)
                 {
-                    GameObject _attacking2 = GameObject.Find("FPos1");
+                    GameObject _attacking2 = GameObject.Find("FPos4");
 
                     _attacking2.GetComponent<UnitManager_scr>()._health -= _damage / 2;
                 }
             }
-            //asking if a friend is exist in pos 2
+            //asking if an enemy exist in pos 2
             else if (GameObject.Find("FPos1") != null)
             {
                 GameObject _attacking = GameObject.Find("FPos1");
-
-                _attacking.GetComponent<UnitManager_scr>()._health -= _damage;
-            }
-            //asking if a friend is exist in pos 3
-            else if (GameObject.Find("FPos4") != null)
-            {
-                GameObject _attacking = GameObject.Find("FPos4");
 
                 _attacking.GetComponent<UnitManager_scr>()._health -= _damage;
                 if (GameObject.Find("FPos3") != null)
@@ -292,14 +288,25 @@ public class Swordsman_scr : MonoBehaviour
                     GameObject _attacking2 = GameObject.Find("FPos3");
 
                     _attacking2.GetComponent<UnitManager_scr>()._health -= _damage / 2;
+
                 }
+
             }
-            //asking if a friend is exist in pos 2
+            //asking if an enemy exist in pos 3
+            else if (GameObject.Find("FPos4") != null)
+            {
+                GameObject _attacking = GameObject.Find("FPos4");
+
+                _attacking.GetComponent<UnitManager_scr>()._health -= _damage;
+
+            }
+            //asking if an enemy exist in pos 4
             else if (GameObject.Find("FPos3") != null)
             {
                 GameObject _attacking = GameObject.Find("FPos3");
 
                 _attacking.GetComponent<UnitManager_scr>()._health -= _damage;
+
             }
         }
     }
@@ -310,22 +317,20 @@ public class Swordsman_scr : MonoBehaviour
         //checking if the unit is friendly
         if (_side == "Friendly")
         {
-            if (GameObject.Find("FPos4") != null)
+            if (GameObject.Find("FPos1") != null)
             {
-                GameObject _buffing = GameObject.Find("FPos4");
+                GameObject _buffing = GameObject.Find("FPos1");
 
-                _buffing.GetComponent<UnitManager_scr>()._damage += 1;
-                _buffing.GetComponent<UnitManager_scr>()._health += 1;
+                _buffing.GetComponent<UnitManager_scr>()._damage += 2;
             }
         }
         else
         {
-            if (GameObject.Find("EPos4") != null)
+            if (GameObject.Find("EPos1") != null)
             {
-                GameObject _buffing = GameObject.Find("EPos4");
+                GameObject _buffing = GameObject.Find("EPos1");
 
-                _buffing.GetComponent<UnitManager_scr>()._damage += 1;
-                _buffing.GetComponent<UnitManager_scr>()._health += 1;
+                _buffing.GetComponent<UnitManager_scr>()._damage += 2;
             }
         }
     }
@@ -336,22 +341,20 @@ public class Swordsman_scr : MonoBehaviour
         //checking if the unit is friendly
         if (_side == "Friendly")
         {
-            if (GameObject.Find("FPos3") != null)
+            if (GameObject.Find("FPos2") != null)
             {
-                GameObject _buffing = GameObject.Find("FPos3");
+                GameObject _buffing = GameObject.Find("FPos2");
 
-                _buffing.GetComponent<UnitManager_scr>()._damage += 1;
-                _buffing.GetComponent<UnitManager_scr>()._health += 1;
+                _buffing.GetComponent<UnitManager_scr>()._damage += 2;
             }
         }
         else
         {
-            if (GameObject.Find("EPos3") != null)
+            if (GameObject.Find("EPos2") != null)
             {
-                GameObject _buffing = GameObject.Find("EPos3");
+                GameObject _buffing = GameObject.Find("EPos2");
 
-                _buffing.GetComponent<UnitManager_scr>()._damage += 1;
-                _buffing.GetComponent<UnitManager_scr>()._health += 1;
+                _buffing.GetComponent<UnitManager_scr>()._damage += 2;
             }
         }
     }

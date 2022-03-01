@@ -109,7 +109,7 @@ public class UnitManager_scr : MonoBehaviour
         }
         if (gameObject.tag == "ShieldBearer")
         {
-            _health = 3;
+            _health = 4;
             _damage = 1;
             _type = "ShieldBearer";
         }

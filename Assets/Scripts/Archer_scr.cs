@@ -69,13 +69,18 @@ public class Archer_scr : MonoBehaviour
         //checking if the unit is friendly
         if (_side == "Friendly")
         {
-            //asking if an enemy in Position 3 exist
-            if (GameObject.Find("EPos3") != null)
+            //checking for shield bearers
+            if (GameObject.Find("EPos1") != null && GameObject.Find("EPos1").tag == "ShieldBearer")
             {
-                GameObject _attacking = GameObject.Find("EPos3");
-
+                GameObject _attacking = GameObject.Find("EPos1");
                 _attacking.GetComponent<UnitManager_scr>()._health -= _damage;
             }
+            else if (GameObject.Find("EPos2") != null && GameObject.Find("EPos2").tag == "ShieldBearer")
+            {
+                GameObject _attacking = GameObject.Find("EPos2");
+                _attacking.GetComponent<UnitManager_scr>()._health -= _damage;
+            }
+            //standard action if there are no shield bearers
             //asking if an enemy exist in pos 4
             else if (GameObject.Find("EPos4") != null)
             {
@@ -101,10 +106,23 @@ public class Archer_scr : MonoBehaviour
 
             }
         }
+        //enemy section
         else
         {
+            //checking for shield bearers
+            if (GameObject.Find("FPos1") != null && GameObject.Find("FPos1").tag == "ShieldBearer")
+            {
+                GameObject _attacking = GameObject.Find("FPos1");
+                _attacking.GetComponent<UnitManager_scr>()._health -= _damage;
+            }
+            else if (GameObject.Find("FPos2") != null && GameObject.Find("FPos2").tag == "ShieldBearer")
+            {
+                GameObject _attacking = GameObject.Find("FPos2");
+                _attacking.GetComponent<UnitManager_scr>()._health -= _damage;
+            }
+            //standard action if there are no shield bearers
             //asking if a friend is in Position 3 exist
-            if (GameObject.Find("FPos3") != null)
+            else if (GameObject.Find("FPos3") != null)
             {
                 GameObject _attacking = GameObject.Find("FPos3");
 
@@ -137,11 +155,23 @@ public class Archer_scr : MonoBehaviour
     //called if gameObject in board position 2
     public void _pos2Combat()
     {
-            //checking if the unit is friendly
-            if (_side == "Friendly")
+        //checking if the unit is friendly
+        if (_side == "Friendly")
             {
+                //checking for shield bearers
+                if (GameObject.Find("EPos2") != null && GameObject.Find("EPos2").tag == "ShieldBearer")
+                {
+                    GameObject _attacking = GameObject.Find("EPos2");
+                    _attacking.GetComponent<UnitManager_scr>()._health -= _damage;
+                }
+                else if (GameObject.Find("EPos1") != null && GameObject.Find("EPos1").tag == "ShieldBearer")
+                {
+                    GameObject _attacking = GameObject.Find("EPos1");
+                    _attacking.GetComponent<UnitManager_scr>()._health -= _damage;
+                }
+                //standard action if there are no shield bearers
                 //asking if an enemy in Position 4 exist
-                if (GameObject.Find("EPos4") != null)
+                else if (GameObject.Find("EPos4") != null)
                 {
                     GameObject _attacking = GameObject.Find("EPos4");
 
@@ -171,8 +201,20 @@ public class Archer_scr : MonoBehaviour
             }
             else
             {
-                //asking if a friend is in Position 4 exist
-                if (GameObject.Find("FPos4") != null)
+            //checking for shield bearers
+            if (GameObject.Find("FPos2") != null && GameObject.Find("FPos2").tag == "ShieldBearer")
+            {
+                GameObject _attacking = GameObject.Find("FPos2");
+                _attacking.GetComponent<UnitManager_scr>()._health -= _damage;
+            }
+            else if (GameObject.Find("FPos1") != null && GameObject.Find("FPos1").tag == "ShieldBearer")
+            {
+                GameObject _attacking = GameObject.Find("FPos1");
+                _attacking.GetComponent<UnitManager_scr>()._health -= _damage;
+            }
+            //standard action if there are no shield bearers
+            //asking if a friend is in Position 4 exist
+            else if (GameObject.Find("FPos4") != null)
                 {
                     GameObject _attacking = GameObject.Find("FPos4");
 
@@ -208,13 +250,27 @@ public class Archer_scr : MonoBehaviour
             //checking if the unit is friendly
             if (_side == "Friendly")
             {
+                //checking for shield bearers
+                if (GameObject.Find("EPos3") != null && GameObject.Find("EPos3").tag == "ShieldBearer")
+                {
+                    GameObject _attacking = GameObject.Find("EPos3");
+                    _attacking.GetComponent<UnitManager_scr>()._health -= _damage;
+                }
+                //standard action if there are no shield bearers
                 //asking if an enemy in Position 1 exist
-                if (GameObject.Find("EPos1") != null)
+                else if (GameObject.Find("EPos1") != null)
                 {
                     GameObject _attacking = GameObject.Find("EPos1");
 
                     _attacking.GetComponent<UnitManager_scr>()._health -= _damage;
                 }
+                //checking for shield bearers
+                else if (GameObject.Find("EPos4") != null && GameObject.Find("EPos4").tag == "ShieldBearer")
+                {
+                    GameObject _attacking = GameObject.Find("EPos4");
+                    _attacking.GetComponent<UnitManager_scr>()._health -= _damage;
+                }
+                //standard action if there are no shield bearers
                 //asking if an enemy exist in pos 2
                 else if (GameObject.Find("EPos2") != null)
                 {
@@ -238,13 +294,27 @@ public class Archer_scr : MonoBehaviour
             }
             else
             {
+                //checking for shield bearers
+                if (GameObject.Find("FPos3") != null && GameObject.Find("FPos3").tag == "ShieldBearer")
+                {
+                    GameObject _attacking = GameObject.Find("FPos3");
+                    _attacking.GetComponent<UnitManager_scr>()._health -= _damage;
+                }
+                //standard action if there are no shield bearers
                 //asking if a friend is in Position 1 exist
-                if (GameObject.Find("FPos1") != null)
+                else if (GameObject.Find("FPos1") != null)
                 {
                     GameObject _attacking = GameObject.Find("FPos1");
 
                     _attacking.GetComponent<UnitManager_scr>()._health -= _damage;
                 }
+                //checking for shield bearers
+                else if (GameObject.Find("FPos4") != null && GameObject.Find("FPos4").tag == "ShieldBearer")
+                {
+                    GameObject _attacking = GameObject.Find("FPos4");
+                    _attacking.GetComponent<UnitManager_scr>()._health -= _damage;
+                }
+                //standard action if there are no shield bearers
                 //asking if a friend is exist in pos 2
                 else if (GameObject.Find("FPos2") != null)
                 {
@@ -275,13 +345,27 @@ public class Archer_scr : MonoBehaviour
             //checking if the unit is friendly
             if (_side == "Friendly")
             {
+                //checking for shield bearers
+                if (GameObject.Find("EPos4") != null && GameObject.Find("EPos4").tag == "ShieldBearer")
+                {
+                    GameObject _attacking = GameObject.Find("EPos4");
+                    _attacking.GetComponent<UnitManager_scr>()._health -= _damage;
+                }
+                //standard action if there are no shield bearers
                 //asking if an enemy in Position 2 exist
-                if (GameObject.Find("EPos2") != null)
+                else if (GameObject.Find("EPos2") != null)
                 {
                     GameObject _attacking = GameObject.Find("EPos2");
 
                     _attacking.GetComponent<UnitManager_scr>()._health -= _damage;
                 }
+                //checking for shield bearers
+                else if (GameObject.Find("EPos3") != null && GameObject.Find("EPos3").tag == "ShieldBearer")
+                {
+                    GameObject _attacking = GameObject.Find("EPos3");
+                    _attacking.GetComponent<UnitManager_scr>()._health -= _damage;
+                }
+                //standard action if there are no shield bearers
                 //asking if an enemy exist in pos 1
                 else if (GameObject.Find("EPos1") != null)
                 {
@@ -306,13 +390,27 @@ public class Archer_scr : MonoBehaviour
             }
             else
             {
+                //checking for shield bearers
+                if (GameObject.Find("FPos4") != null && GameObject.Find("FPos4").tag == "ShieldBearer")
+                {
+                    GameObject _attacking = GameObject.Find("FPos4");
+                    _attacking.GetComponent<UnitManager_scr>()._health -= _damage;
+                }
+                //standard action if there are no shield bearers
                 //asking if a friend is in Position 2 exist
-                if (GameObject.Find("FPos2") != null)
+                else if (GameObject.Find("FPos2") != null)
                 {
                     GameObject _attacking = GameObject.Find("FPos2");
 
                     _attacking.GetComponent<UnitManager_scr>()._health -= _damage;
                 }
+                //checking for shield bearers
+                else if (GameObject.Find("FPos3") != null && GameObject.Find("FPos3").tag == "ShieldBearer")
+                {
+                    GameObject _attacking = GameObject.Find("FPos3");
+                    _attacking.GetComponent<UnitManager_scr>()._health -= _damage;
+                }
+                //standard action if there are no shield bearers
                 //asking if a friend is exist in pos 1
                 else if (GameObject.Find("FPos1") != null)
                 {
@@ -325,9 +423,7 @@ public class Archer_scr : MonoBehaviour
                 {
                     
                     GameObject _attacking = GameObject.Find("FPos4");
-                    print(_attacking.GetComponent<UnitManager_scr>()._health);
                     _attacking.GetComponent<UnitManager_scr>()._health -= _damage;
-                    print(_attacking.GetComponent<UnitManager_scr>()._health);
                 }
                 //asking if a friend is exist in pos 3
                 else if (GameObject.Find("FPos3") != null)
