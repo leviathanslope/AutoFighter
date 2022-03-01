@@ -69,14 +69,12 @@ public class Archer_scr : MonoBehaviour
         //checking if the unit is friendly
         if (_side == "Friendly")
         {
-            print("friend Attack");
             //asking if an enemy in Position 3 exist
             if (GameObject.Find("EPos3") != null)
             {
                 GameObject _attacking = GameObject.Find("EPos3");
 
                 _attacking.GetComponent<UnitManager_scr>()._health -= _damage;
-                print(_attacking.GetComponent<UnitManager_scr>()._health);
             }
             //asking if an enemy exist in pos 4
             else if (GameObject.Find("EPos4") != null)
@@ -105,7 +103,6 @@ public class Archer_scr : MonoBehaviour
         }
         else
         {
-            print(gameObject.name + ":    enemy Attack");
             //asking if a friend is in Position 3 exist
             if (GameObject.Find("FPos3") != null)
             {
