@@ -8,7 +8,9 @@ public class GameManager : MonoBehaviour
 
     public int isPaused;
 
-    public float victoryPoints, playerHealth, money;
+    public float victoryPoints;
+    public float playerHealth = 20;
+    public float money = 10;
 
     private void Awake()
     {
