@@ -24,6 +24,14 @@ public class UnitManager_scr : MonoBehaviour
     {
         if (_health <= 0)
         {
+            if (_type == "Healer")
+            {
+                _healerDeath();
+            }
+            if (_type == "Mage")
+            {
+                _mageDeath();
+            }
             Destroy(gameObject);
         }
     }
@@ -136,6 +144,164 @@ public class UnitManager_scr : MonoBehaviour
             _health = 2;
             _damage = 2;
             _type = "Spearman";
+        }
+    }
+
+    void _healerDeath()
+    {
+        if (_side == "Friendly")
+        {
+            if (_boardPos == 1 || _boardPos == 2)
+            {
+                if (GameObject.Find("FPos1") != null)
+                {
+                    GameObject _healing = GameObject.Find("FPos1");
+                    _healing.GetComponent<UnitManager_scr>()._health += 2;
+                }
+                if (GameObject.Find("FPos2") != null)
+                {
+                    GameObject _healing = GameObject.Find("FPos2");
+                    _healing.GetComponent<UnitManager_scr>()._health += 2;
+                }
+                if (GameObject.Find("FPos3") != null)
+                {
+                    GameObject _healing = GameObject.Find("FPos3");
+                    _healing.GetComponent<UnitManager_scr>()._health += 2;
+                }
+                if (GameObject.Find("FPos4") != null)
+                {
+                    GameObject _healing = GameObject.Find("FPos4");
+                    _healing.GetComponent<UnitManager_scr>()._health += 2;
+                }
+            }
+        }
+        else
+        {
+            if (_boardPos == 1 || _boardPos == 2)
+            {
+                if (GameObject.Find("EPos1") != null)
+                {
+                    GameObject _healing = GameObject.Find("EPos1");
+                    _healing.GetComponent<UnitManager_scr>()._health += 2;
+                }
+                if (GameObject.Find("EPos2") != null)
+                {
+                    GameObject _healing = GameObject.Find("EPos2");
+                    _healing.GetComponent<UnitManager_scr>()._health += 2;
+                }
+                if (GameObject.Find("EPos3") != null)
+                {
+                    GameObject _healing = GameObject.Find("EPos3");
+                    _healing.GetComponent<UnitManager_scr>()._health += 2;
+                }
+                if (GameObject.Find("EPos4") != null)
+                {
+                    GameObject _healing = GameObject.Find("EPos4");
+                    _healing.GetComponent<UnitManager_scr>()._health += 2;
+                }
+            }
+        }
+    }
+
+    void _mageDeath()
+    {
+        if (_side == "Friendly")
+        {
+            if (_boardPos == 1)
+            {
+                if (GameObject.Find("EPos1") != null)
+                {
+                    GameObject _damaging = GameObject.Find("EPos1");
+                    _damaging.GetComponent<UnitManager_scr>()._health -= 1;
+                }
+                if (GameObject.Find("EPos2") != null)
+                {
+                    GameObject _damaging = GameObject.Find("EPos2");
+                    _damaging.GetComponent<UnitManager_scr>()._health -= 1;
+                }
+                if (GameObject.Find("EPos3") != null)
+                {
+                    GameObject _damaging = GameObject.Find("EPos3");
+                    _damaging.GetComponent<UnitManager_scr>()._health -= 1;
+                }
+                if (GameObject.Find("EPos4") != null)
+                {
+                    GameObject _damaging = GameObject.Find("EPos4");
+                    _damaging.GetComponent<UnitManager_scr>()._health -= 1;
+                }
+            }
+            if (_boardPos == 2)
+            {
+                if (GameObject.Find("FPos1") != null)
+                {
+                    GameObject _damaging = GameObject.Find("FPos1");
+                    _damaging.GetComponent<UnitManager_scr>()._damage += 1;
+                }
+                if (GameObject.Find("FPos2") != null)
+                {
+                    GameObject _damaging = GameObject.Find("FPos2");
+                    _damaging.GetComponent<UnitManager_scr>()._damage += 1;
+                }
+                if (GameObject.Find("FPos3") != null)
+                {
+                    GameObject _damaging = GameObject.Find("FPos3");
+                    _damaging.GetComponent<UnitManager_scr>()._damage += 1;
+                }
+                if (GameObject.Find("FPos4") != null)
+                {
+                    GameObject _damaging = GameObject.Find("FPos4");
+                    _damaging.GetComponent<UnitManager_scr>()._damage += 1;
+                }
+            }
+        }
+        else
+        {
+            if (_boardPos == 1)
+            {
+                if (GameObject.Find("FPos1") != null)
+                {
+                    GameObject _damaging = GameObject.Find("FPos1");
+                    _damaging.GetComponent<UnitManager_scr>()._health -= 1;
+                }
+                if (GameObject.Find("FPos2") != null)
+                {
+                    GameObject _damaging = GameObject.Find("FPos2");
+                    _damaging.GetComponent<UnitManager_scr>()._health -= 1;
+                }
+                if (GameObject.Find("FPos3") != null)
+                {
+                    GameObject _damaging = GameObject.Find("FPos3");
+                    _damaging.GetComponent<UnitManager_scr>()._health -= 1;
+                }
+                if (GameObject.Find("FPos4") != null)
+                {
+                    GameObject _damaging = GameObject.Find("FPos4");
+                    _damaging.GetComponent<UnitManager_scr>()._health -= 1;
+                }
+            }
+            if (_boardPos == 2)
+            {
+                if (GameObject.Find("EPos1") != null)
+                {
+                    GameObject _damaging = GameObject.Find("EPos1");
+                    _damaging.GetComponent<UnitManager_scr>()._damage += 1;
+                }
+                if (GameObject.Find("EPos2") != null)
+                {
+                    GameObject _damaging = GameObject.Find("EPos2");
+                    _damaging.GetComponent<UnitManager_scr>()._damage += 1;
+                }
+                if (GameObject.Find("EPos3") != null)
+                {
+                    GameObject _damaging = GameObject.Find("EPos3");
+                    _damaging.GetComponent<UnitManager_scr>()._damage += 1;
+                }
+                if (GameObject.Find("EPos4") != null)
+                {
+                    GameObject _damaging = GameObject.Find("EPos4");
+                    _damaging.GetComponent<UnitManager_scr>()._damage += 1;
+                }
+            }
         }
     }
 }
