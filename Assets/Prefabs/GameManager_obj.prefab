@@ -1,0 +1,76 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &645366360845899407
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 645366360845899409}
+  - component: {fileID: 645366360845899406}
+  - component: {fileID: 645366360845899408}
+  m_Layer: 0
+  m_Name: GameManager_obj
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &645366360845899409
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 645366360845899407}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.30448645, y: -0.3851902, z: -0.8648474}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &645366360845899406
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 645366360845899407}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e5b1cf412c02074294c5d573fb84d28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isPaused: 0
+  _victoryPoints: 0
+  _playerHealth: 20
+  _money: 10
+--- !u!114 &645366360845899408
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 645366360845899407}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d048de2caef5f44eb3d4eb13fed0b17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  swordUnit: {fileID: 0}
+  archerUnit: {fileID: 0}
+  mageUnit: {fileID: 0}
+  shieldUnit: {fileID: 0}
+  spearUnit: {fileID: 0}
+  healUnit: {fileID: 0}
+  FPos1: {fileID: 0}
+  FPos2: {fileID: 0}
+  FPos3: {fileID: 0}
+  FPos4: {fileID: 0}
+  EPos1: {fileID: 0}
+  EPos2: {fileID: 0}
+  EPos3: {fileID: 0}
+  EPos4: {fileID: 0}

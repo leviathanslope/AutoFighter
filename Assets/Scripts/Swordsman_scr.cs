@@ -317,6 +317,42 @@ public class Swordsman_scr : MonoBehaviour
                 _buffing.GetComponent<UnitManager_scr>()._damage += 1;
                 _buffing.GetComponent<UnitManager_scr>()._health += 1;
             }
+            //checking for shield bearer
+            else if (GameObject.Find("EPos2") != null && GameObject.Find("EPos2").tag == "ShieldBearer")
+            {
+                GameObject _attacking = GameObject.Find("EPos2");
+                _attacking.GetComponent<UnitManager_scr>()._health -= _damage;
+            }
+            else if (GameObject.Find("EPos3") != null && GameObject.Find("EPos3").tag == "ShieldBearer")
+            {
+                GameObject _attacking = GameObject.Find("EPos3");
+                _attacking.GetComponent<UnitManager_scr>()._health -= _damage;
+            }
+            //standard action if there are no shield bearers
+            else if (GameObject.Find("EPos1") != null)
+            {
+                GameObject _attacking = GameObject.Find("EPos1");
+
+                _attacking.GetComponent<UnitManager_scr>()._health -= _damage;
+            }
+            else if (GameObject.Find("EPos2") != null)
+            {
+                GameObject _attacking = GameObject.Find("EPos2");
+
+                _attacking.GetComponent<UnitManager_scr>()._health -= _damage;
+            }
+            else if (GameObject.Find("EPos3") != null)
+            {
+                GameObject _attacking = GameObject.Find("EPos3");
+
+                _attacking.GetComponent<UnitManager_scr>()._health -= _damage;
+            }
+            else if (GameObject.Find("EPos4") != null)
+            {
+                GameObject _attacking = GameObject.Find("EPos4");
+
+                _attacking.GetComponent<UnitManager_scr>()._health -= _damage;
+            }
         }
         else
         {
@@ -326,6 +362,44 @@ public class Swordsman_scr : MonoBehaviour
 
                 _buffing.GetComponent<UnitManager_scr>()._damage += 1;
                 _buffing.GetComponent<UnitManager_scr>()._health += 1;
+            }
+
+
+            //checking for shield bearer
+            else if (GameObject.Find("FPos2") != null && GameObject.Find("FPos2").tag == "ShieldBearer")
+            {
+                GameObject _attacking = GameObject.Find("FPos2");
+                _attacking.GetComponent<UnitManager_scr>()._health -= _damage;
+            }
+            else if (GameObject.Find("FPos3") != null && GameObject.Find("FPos3").tag == "ShieldBearer")
+            {
+                GameObject _attacking = GameObject.Find("FPos3");
+                _attacking.GetComponent<UnitManager_scr>()._health -= _damage;
+            }
+            //standard action if there are no shield bearers
+            else if (GameObject.Find("FPos1") != null)
+            {
+                GameObject _attacking = GameObject.Find("FPos1");
+
+                _attacking.GetComponent<UnitManager_scr>()._health -= _damage;
+            }
+            else if (GameObject.Find("FPos2") != null)
+            {
+                GameObject _attacking = GameObject.Find("FPos2");
+
+                _attacking.GetComponent<UnitManager_scr>()._health -= _damage;
+            }
+            else if (GameObject.Find("FPos3") != null)
+            {
+                GameObject _attacking = GameObject.Find("FPos3");
+
+                _attacking.GetComponent<UnitManager_scr>()._health -= _damage;
+            }
+            else if (GameObject.Find("FPos4") != null)
+            {
+                GameObject _attacking = GameObject.Find("FPos4");
+
+                _attacking.GetComponent<UnitManager_scr>()._health -= _damage;
             }
         }
     }
@@ -343,6 +417,43 @@ public class Swordsman_scr : MonoBehaviour
                 _buffing.GetComponent<UnitManager_scr>()._damage += 1;
                 _buffing.GetComponent<UnitManager_scr>()._health += 1;
             }
+
+            //checking for shield bearers
+            else if (GameObject.Find("EPos1") != null && GameObject.Find("EPos1").tag == "ShieldBearer")
+            {
+                GameObject _attacking = GameObject.Find("EPos1");
+                _attacking.GetComponent<UnitManager_scr>()._health -= _damage;
+            }
+            else if (GameObject.Find("EPos4") != null && GameObject.Find("EPos4").tag == "ShieldBearer")
+            {
+                GameObject _attacking = GameObject.Find("EPos4");
+                _attacking.GetComponent<UnitManager_scr>()._health -= _damage;
+            }
+            //standard action if there are no shield bearers
+            else if (GameObject.Find("EPos2") != null)
+            {
+                GameObject _attacking = GameObject.Find("EPos2");
+
+                _attacking.GetComponent<UnitManager_scr>()._health -= _damage;
+            }
+            else if (GameObject.Find("EPos1") != null)
+            {
+                GameObject _attacking = GameObject.Find("EPos1");
+
+                _attacking.GetComponent<UnitManager_scr>()._health -= _damage;
+            }
+            else if (GameObject.Find("EPos4") != null)
+            {
+                GameObject _attacking = GameObject.Find("EPos4");
+
+                _attacking.GetComponent<UnitManager_scr>()._health -= _damage;
+            }
+            else if (GameObject.Find("EPos3") != null)
+            {
+                GameObject _attacking = GameObject.Find("EPos3");
+
+                _attacking.GetComponent<UnitManager_scr>()._health -= _damage;
+            }
         }
         else
         {
@@ -352,6 +463,43 @@ public class Swordsman_scr : MonoBehaviour
 
                 _buffing.GetComponent<UnitManager_scr>()._damage += 1;
                 _buffing.GetComponent<UnitManager_scr>()._health += 1;
+            }
+
+            //checking for shield bearers
+            else if (GameObject.Find("FPos1") != null && GameObject.Find("FPos1").tag == "ShieldBearer")
+            {
+                GameObject _attacking = GameObject.Find("FPos1");
+                _attacking.GetComponent<UnitManager_scr>()._health -= _damage;
+            }
+            else if (GameObject.Find("FPos4") != null && GameObject.Find("FPos4").tag == "ShieldBearer")
+            {
+                GameObject _attacking = GameObject.Find("FPos4");
+                _attacking.GetComponent<UnitManager_scr>()._health -= _damage;
+            }
+            //standard action if there are no shield bearers
+            else if (GameObject.Find("FPos2") != null)
+            {
+                GameObject _attacking = GameObject.Find("FPos2");
+
+                _attacking.GetComponent<UnitManager_scr>()._health -= _damage;
+            }
+            else if (GameObject.Find("FPos1") != null)
+            {
+                GameObject _attacking = GameObject.Find("FPos1");
+
+                _attacking.GetComponent<UnitManager_scr>()._health -= _damage;
+            }
+            else if (GameObject.Find("FPos4") != null)
+            {
+                GameObject _attacking = GameObject.Find("FPos4");
+
+                _attacking.GetComponent<UnitManager_scr>()._health -= _damage;
+            }
+            else if (GameObject.Find("FPos3") != null)
+            {
+                GameObject _attacking = GameObject.Find("FPos3");
+
+                _attacking.GetComponent<UnitManager_scr>()._health -= _damage;
             }
         }
     }

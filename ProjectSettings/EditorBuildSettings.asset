@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/GameState.unity
     guid: 506ddee00bf222e4fb2e21015e8f3eec
+  - enabled: 1
+    path: Assets/Scenes/AutoBattleTest.unity
+    guid: 88273b87bd2081940b4f09d99ea65749
   m_configObjects: {}

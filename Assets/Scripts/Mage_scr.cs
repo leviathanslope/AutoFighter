@@ -130,7 +130,7 @@ public class Mage_scr : MonoBehaviour
 
                 _attacking.GetComponent<UnitManager_scr>()._health -= _damage;
             }
-            else if (GameObject.Find("EFPos2") != null)
+            else if (GameObject.Find("FPos2") != null)
             {
                 GameObject _attacking = GameObject.Find("FPos2");
 
@@ -244,7 +244,7 @@ public class Mage_scr : MonoBehaviour
             if (_gained == false)
             {
                 _gained = true;
-                GameObject.Find("PlayerManager_obj").GetComponent<PlayerManger_scr>()._coin += 1;
+                GameObject.Find("GameManager_obj").GetComponent<GameManager>()._money += 1;
             }
 
             //checking for shield bearer
@@ -304,7 +304,7 @@ public class Mage_scr : MonoBehaviour
 
                 _attacking.GetComponent<UnitManager_scr>()._health -= _damage;
             }
-            else if (GameObject.Find("EFPos2") != null)
+            else if (GameObject.Find("FPos2") != null)
             {
                 GameObject _attacking = GameObject.Find("FPos2");
 
@@ -334,7 +334,7 @@ public class Mage_scr : MonoBehaviour
             if (_gained == false)
             {
                 _gained = true;
-                GameObject.Find("PlayerManager_obj").GetComponent<PlayerManger_scr>()._health += 1;
+                GameObject.Find("GameManager_obj").GetComponent<GameManager>()._playerHealth += 1;
             }
 
             //checking for shield bearers

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UnitManager_scr : MonoBehaviour
 {
@@ -11,6 +12,8 @@ public class UnitManager_scr : MonoBehaviour
 
     public int _boardPos;
     public string _side;
+    [SerializeField] Text _Healthtxt;
+    [SerializeField] Text _Damagetxt;
 
     // Start is called before the first frame update
     void Start()
@@ -34,6 +37,10 @@ public class UnitManager_scr : MonoBehaviour
             }
             Destroy(gameObject);
         }
+
+        _Healthtxt.text = _health.ToString();
+
+        _Damagetxt.text = _damage.ToString();
     }
     void _sideDeclaration()
     {

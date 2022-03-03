@@ -220,9 +220,9 @@ public class SaveSystem_Script: MonoBehaviour
             float moneyCount = float.Parse(money[0].InnerText);
             save.money = moneyCount;
 
-            GameManager.instance.victoryPoints = save.victoryPoints;
-            GameManager.instance.playerHealth = save.playerHealth;
-            GameManager.instance.money = save.money;
+            GameManager.instance._victoryPoints = save.victoryPoints;
+            GameManager.instance._playerHealth = save.playerHealth;
+            GameManager.instance._money = save.money;
 
             XmlNodeList unit1Health = xmlDocument.GetElementsByTagName("Unit1Health");
             float unit1HealthCount = float.Parse(unit1Health[0].InnerText);
@@ -756,9 +756,9 @@ public class SaveSystem_Script: MonoBehaviour
     {
         Save save = new Save();
 
-        save.victoryPoints = GameManager.instance.victoryPoints;
-        save.playerHealth = GameManager.instance.playerHealth;
-        save.money = GameManager.instance.money;
+        save.victoryPoints = GameManager.instance._victoryPoints;
+        save.playerHealth = GameManager.instance._playerHealth;
+        save.money = GameManager.instance._money;
 
         if (FPos1 != null)
         {
