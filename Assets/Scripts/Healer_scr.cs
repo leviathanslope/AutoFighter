@@ -128,7 +128,7 @@ public class Healer_scr : MonoBehaviour
 
                 _attacking.GetComponent<UnitManager_scr>()._health -= _damage;
             }
-            else if (GameObject.Find("EFPos2") != null)
+            else if (GameObject.Find("FPos2") != null)
             {
                 GameObject _attacking = GameObject.Find("FPos2");
 
@@ -310,7 +310,7 @@ public class Healer_scr : MonoBehaviour
 
                 _attacking.GetComponent<UnitManager_scr>()._health -= _damage;
             }
-            else if (GameObject.Find("EFPos2") != null)
+            else if (GameObject.Find("FPos2") != null)
             {
                 GameObject _attacking = GameObject.Find("FPos2");
 

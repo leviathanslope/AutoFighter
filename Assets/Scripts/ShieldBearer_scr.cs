@@ -30,7 +30,6 @@ public class ShieldBearer_scr : MonoBehaviour
 
         _actionTick = GameObject.FindWithTag("AutoBattlerController").GetComponent<AutoBattlerController_scr>()._actionTick;
 
-
         callForAction();
     }
 
@@ -128,8 +127,9 @@ public class ShieldBearer_scr : MonoBehaviour
 
                 _attacking.GetComponent<UnitManager_scr>()._health -= _damage;
             }
-            else if (GameObject.Find("EFPos2") != null)
+            else if (GameObject.Find("FPos2") != null)
             {
+                print("check2");
                 GameObject _attacking = GameObject.Find("FPos2");
 
                 _attacking.GetComponent<UnitManager_scr>()._health -= _damage;
@@ -296,7 +296,7 @@ public class ShieldBearer_scr : MonoBehaviour
 
                 _attacking.GetComponent<UnitManager_scr>()._health -= _damage;
             }
-            else if (GameObject.Find("EFPos2") != null)
+            else if (GameObject.Find("FPos2") != null)
             {
                 GameObject _attacking = GameObject.Find("FPos2");
 
