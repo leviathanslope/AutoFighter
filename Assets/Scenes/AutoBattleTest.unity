@@ -299,6 +299,7 @@ MonoBehaviour:
   m_OptimizeCollider: 1
   m_OptimizeGeometry: 1
   m_EnableTangents: 0
+  m_GeometryCached: 0
 --- !u!1971053207 &114353394
 SpriteShapeRenderer:
   m_ObjectHideFlags: 0
@@ -625,7 +626,7 @@ MonoBehaviour:
   _mage: {fileID: 9507342826997644, guid: 693b4cb8902d62c499b9ef2ac35f9baa, type: 3}
   _healer: {fileID: 2386074922357441057, guid: e1d8f3bff08f1474492b271e7a1eb3ab, type: 3}
   _Sw: {fileID: 21300000, guid: 919d39fe9747b27439a7abae8723425e, type: 3}
-  _sp: {fileID: 21300000, guid: 5430cbb515b48d24a8893fbb3c72d49f, type: 3}
+  _sp: {fileID: 21300000, guid: e439bf99721981d4ca0e3adbbd4601aa, type: 3}
   _sh: {fileID: 21300000, guid: 03b84fadd36522444a2d9c85494f8978, type: 3}
   _ar: {fileID: 21300000, guid: 752147a149020d44daabc3b694c56bec, type: 3}
   _ma: {fileID: 21300000, guid: 96d3c67f8f5d0114589dd5901e20240f, type: 3}

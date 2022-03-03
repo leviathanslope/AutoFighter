@@ -247,7 +247,7 @@ public class Healer_scr : MonoBehaviour
             }
 
             //checking for shield bearer
-            else if (GameObject.Find("EPos2") != null && GameObject.Find("EPos2").tag == "ShieldBearer")
+            if (GameObject.Find("EPos2") != null && GameObject.Find("EPos2").tag == "ShieldBearer")
             {
                 GameObject _attacking = GameObject.Find("EPos2");
                 _attacking.GetComponent<UnitManager_scr>()._health -= _damage;
@@ -293,7 +293,7 @@ public class Healer_scr : MonoBehaviour
             }
 
             //checking for shield bearer
-            else if (GameObject.Find("FPos2") != null && GameObject.Find("FPos2").tag == "ShieldBearer")
+            if (GameObject.Find("FPos2") != null && GameObject.Find("FPos2").tag == "ShieldBearer")
             {
                 GameObject _attacking = GameObject.Find("FPos2");
                 _attacking.GetComponent<UnitManager_scr>()._health -= _damage;
@@ -345,7 +345,7 @@ public class Healer_scr : MonoBehaviour
             }
 
             //checking for shield bearers
-            else if (GameObject.Find("EPos1") != null && GameObject.Find("EPos1").tag == "ShieldBearer")
+            if (GameObject.Find("EPos1") != null && GameObject.Find("EPos1").tag == "ShieldBearer")
             {
                 GameObject _attacking = GameObject.Find("EPos1");
                 _attacking.GetComponent<UnitManager_scr>()._health -= _damage;
@@ -391,7 +391,7 @@ public class Healer_scr : MonoBehaviour
             }
 
             //checking for shield bearers
-            else if (GameObject.Find("FPos1") != null && GameObject.Find("FPos1").tag == "ShieldBearer")
+            if (GameObject.Find("FPos1") != null && GameObject.Find("FPos1").tag == "ShieldBearer")
             {
                 GameObject _attacking = GameObject.Find("FPos1");
                 _attacking.GetComponent<UnitManager_scr>()._health -= _damage;

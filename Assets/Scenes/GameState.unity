@@ -251,7 +251,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _Swordsman: {fileID: 21300000, guid: e6dc320916214b549871f9c88d8dcbaf, type: 3}
-  _spearsman: {fileID: 21300000, guid: 5430cbb515b48d24a8893fbb3c72d49f, type: 3}
+  _spearsman: {fileID: 21300000, guid: 55aae9cc03a696d4799e0cfa5c3e88a9, type: 3}
   _shieldbearer: {fileID: 21300000, guid: 520f0ceeab99a164cb91a1657b838e1c, type: 3}
   _archer: {fileID: 21300000, guid: a8db51f167f8cab4a8e452b8beb0d610, type: 3}
   _mage: {fileID: 21300000, guid: b7739ac6f4b2fdc4baf841de32dd8da9, type: 3}
@@ -885,6 +885,108 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 265537786}
   m_CullTransparentMesh: 0
+--- !u!1 &433010237 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 645366360845899407, guid: 4060bbd5f70cedb42963f6a78f6fde4d,
+    type: 3}
+  m_PrefabInstance: {fileID: 1134367076}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &433010241
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 433010237}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 22ec82b83f1ef0e4498baebe506ffbef, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 0.1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &473839385
 GameObject:
   m_ObjectHideFlags: 0
@@ -1581,7 +1683,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _Swordsman: {fileID: 21300000, guid: e6dc320916214b549871f9c88d8dcbaf, type: 3}
-  _spearsman: {fileID: 21300000, guid: 5430cbb515b48d24a8893fbb3c72d49f, type: 3}
+  _spearsman: {fileID: 21300000, guid: 55aae9cc03a696d4799e0cfa5c3e88a9, type: 3}
   _shieldbearer: {fileID: 21300000, guid: 520f0ceeab99a164cb91a1657b838e1c, type: 3}
   _archer: {fileID: 21300000, guid: a8db51f167f8cab4a8e452b8beb0d610, type: 3}
   _mage: {fileID: 21300000, guid: b7739ac6f4b2fdc4baf841de32dd8da9, type: 3}
@@ -2107,7 +2209,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 5430cbb515b48d24a8893fbb3c72d49f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 55aae9cc03a696d4799e0cfa5c3e88a9, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2138,7 +2240,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _Swordsman: {fileID: 21300000, guid: e6dc320916214b549871f9c88d8dcbaf, type: 3}
-  _spearsman: {fileID: 21300000, guid: 5430cbb515b48d24a8893fbb3c72d49f, type: 3}
+  _spearsman: {fileID: 21300000, guid: 55aae9cc03a696d4799e0cfa5c3e88a9, type: 3}
   _shieldbearer: {fileID: 21300000, guid: 520f0ceeab99a164cb91a1657b838e1c, type: 3}
   _archer: {fileID: 21300000, guid: a8db51f167f8cab4a8e452b8beb0d610, type: 3}
   _mage: {fileID: 21300000, guid: b7739ac6f4b2fdc4baf841de32dd8da9, type: 3}
@@ -4201,7 +4303,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _Swordsman: {fileID: 21300000, guid: e6dc320916214b549871f9c88d8dcbaf, type: 3}
-  _spearsman: {fileID: 21300000, guid: 5430cbb515b48d24a8893fbb3c72d49f, type: 3}
+  _spearsman: {fileID: 21300000, guid: 55aae9cc03a696d4799e0cfa5c3e88a9, type: 3}
   _shieldbearer: {fileID: 21300000, guid: 520f0ceeab99a164cb91a1657b838e1c, type: 3}
   _archer: {fileID: 21300000, guid: a8db51f167f8cab4a8e452b8beb0d610, type: 3}
   _mage: {fileID: 21300000, guid: b7739ac6f4b2fdc4baf841de32dd8da9, type: 3}
@@ -4296,7 +4398,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _Swordsman: {fileID: 21300000, guid: e6dc320916214b549871f9c88d8dcbaf, type: 3}
-  _spearsman: {fileID: 21300000, guid: 5430cbb515b48d24a8893fbb3c72d49f, type: 3}
+  _spearsman: {fileID: 21300000, guid: 55aae9cc03a696d4799e0cfa5c3e88a9, type: 3}
   _shieldbearer: {fileID: 21300000, guid: 520f0ceeab99a164cb91a1657b838e1c, type: 3}
   _archer: {fileID: 21300000, guid: a8db51f167f8cab4a8e452b8beb0d610, type: 3}
   _mage: {fileID: 21300000, guid: b7739ac6f4b2fdc4baf841de32dd8da9, type: 3}
@@ -4863,7 +4965,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _Swordsman: {fileID: 21300000, guid: e6dc320916214b549871f9c88d8dcbaf, type: 3}
-  _spearsman: {fileID: 21300000, guid: 5430cbb515b48d24a8893fbb3c72d49f, type: 3}
+  _spearsman: {fileID: 21300000, guid: 55aae9cc03a696d4799e0cfa5c3e88a9, type: 3}
   _shieldbearer: {fileID: 21300000, guid: 520f0ceeab99a164cb91a1657b838e1c, type: 3}
   _archer: {fileID: 21300000, guid: a8db51f167f8cab4a8e452b8beb0d610, type: 3}
   _mage: {fileID: 21300000, guid: b7739ac6f4b2fdc4baf841de32dd8da9, type: 3}
