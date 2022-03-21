@@ -72,12 +72,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d048de2caef5f44eb3d4eb13fed0b17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  swordUnit: {fileID: 0}
-  archerUnit: {fileID: 0}
-  mageUnit: {fileID: 0}
-  shieldUnit: {fileID: 0}
-  spearUnit: {fileID: 0}
-  healUnit: {fileID: 0}
+  swordUnit: {fileID: 8734361768166662765, guid: 06b8481ecdba58b4f9cc7e23c33c9e64,
+    type: 3}
+  archerUnit: {fileID: 105877439750576894, guid: 059ad48c8ee0576429f35ae50e383a88,
+    type: 3}
+  mageUnit: {fileID: 9507342826997644, guid: 693b4cb8902d62c499b9ef2ac35f9baa, type: 3}
+  shieldUnit: {fileID: 969989406111073382, guid: 0c59c05055d1ff2499bc50ad39b8b628,
+    type: 3}
+  spearUnit: {fileID: 5961064689151155784, guid: 0b36484f117ea54479214c0fe5c7dc05,
+    type: 3}
+  healUnit: {fileID: 2386074922357441057, guid: e1d8f3bff08f1474492b271e7a1eb3ab,
+    type: 3}
   FPos1: {fileID: 0}
   FPos2: {fileID: 0}
   FPos3: {fileID: 0}

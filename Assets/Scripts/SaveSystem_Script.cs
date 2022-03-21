@@ -41,6 +41,16 @@ public class SaveSystem_Script: MonoBehaviour
 
     public void SaveData()
     {
+
+        FPos1 = GameObject.Find("FPos1");
+        FPos2 = GameObject.Find("FPos2");
+        FPos3 = GameObject.Find("FPos3");
+        FPos4 = GameObject.Find("FPos4");
+        EPos1 = GameObject.Find("EPos1");
+        EPos2 = GameObject.Find("EPos2");
+        EPos3 = GameObject.Find("EPos3");
+        EPos4 = GameObject.Find("EPos4");
+
         Save save = createSaveGameObject();
         XmlDocument xmlDocument = new XmlDocument();
 
@@ -139,6 +149,9 @@ public class SaveSystem_Script: MonoBehaviour
         XmlElement enemy1Tag = xmlDocument.CreateElement("Enemy1Type");
         enemy1Tag.InnerText = save.enemy1Type.ToString();
         root.AppendChild(enemy1Tag);
+        XmlElement enemy1Sprite = xmlDocument.CreateElement("Enemy1Sprite");
+        enemy1Sprite.InnerText = save.enemy1Sprite;
+        root.AppendChild(enemy1Sprite);
 
         XmlElement enemy2Health = xmlDocument.CreateElement("Enemy2Health");
         enemy2Health.InnerText = save.enemy2Health.ToString();
@@ -155,6 +168,9 @@ public class SaveSystem_Script: MonoBehaviour
         XmlElement enemy2Tag = xmlDocument.CreateElement("Enemy2Type");
         enemy2Tag.InnerText = save.enemy2Type.ToString();
         root.AppendChild(enemy2Tag);
+        XmlElement enemy2Sprite = xmlDocument.CreateElement("Enemy2Sprite");
+        enemy2Sprite.InnerText = save.enemy2Sprite;
+        root.AppendChild(enemy2Sprite);
 
         XmlElement enemy3Health = xmlDocument.CreateElement("Enemy3Health");
         enemy3Health.InnerText = save.enemy3Health.ToString();
@@ -171,6 +187,7 @@ public class SaveSystem_Script: MonoBehaviour
         XmlElement enemy3Tag = xmlDocument.CreateElement("Enemy3Type");
         enemy3Tag.InnerText = save.enemy3Type;
         root.AppendChild(enemy3Tag);
+        XmlElement enemy3Sprite = xmlDocument.CreateElement("Enemy3Sprite");
 
         XmlElement enemy4Health = xmlDocument.CreateElement("Enemy4Health");
         enemy4Health.InnerText = save.enemy4Health.ToString();
@@ -834,6 +851,7 @@ public class SaveSystem_Script: MonoBehaviour
             save.enemy1XPos = EPos1.transform.position.x;
             save.enemy1YPos = EPos1.transform.position.y;
             save.enemy1Type = EPos1.tag;
+            save.enemy1Sprite = EPos1.GetComponent<SpriteRenderer>().sprite.ToString();
         }
         else
         {
@@ -842,6 +860,7 @@ public class SaveSystem_Script: MonoBehaviour
             save.enemy1XPos = 0;
             save.enemy1YPos = 0;
             save.enemy1Type = "None";
+            save.enemy1Sprite = "None";
         }
 
         if (EPos2 != null)
@@ -851,6 +870,7 @@ public class SaveSystem_Script: MonoBehaviour
             save.enemy2XPos = EPos2.transform.position.x;
             save.enemy2YPos = EPos2.transform.position.y;
             save.enemy2Type = EPos2.tag;
+            save.enemy2Sprite = EPos2.GetComponent<SpriteRenderer>().sprite.ToString();
         }
         else
         {
@@ -859,6 +879,7 @@ public class SaveSystem_Script: MonoBehaviour
             save.enemy2XPos = 0;
             save.enemy2YPos = 0;
             save.enemy2Type = "None";
+            save.enemy2Sprite = "None";
         }
 
         if (EPos3 != null)
@@ -868,6 +889,7 @@ public class SaveSystem_Script: MonoBehaviour
             save.enemy3XPos = EPos3.transform.position.x;
             save.enemy3YPos = EPos3.transform.position.y;
             save.enemy3Type = EPos3.tag;
+            save.enemy3Sprite = EPos3.GetComponent<SpriteRenderer>().sprite.ToString();
         }
         else
         {
@@ -876,15 +898,17 @@ public class SaveSystem_Script: MonoBehaviour
             save.enemy3XPos = 0;
             save.enemy3YPos = 0;
             save.enemy3Type = "None";
+            save.enemy3Sprite = "None";
         }
 
         if (EPos4 != null)
         {
-            save.enemy4Health = EPos1.GetComponent<UnitManager_scr>()._health;
-            save.enemy4Attack = EPos1.GetComponent<UnitManager_scr>()._damage;
-            save.enemy4XPos = EPos1.transform.position.x;
-            save.enemy4YPos = EPos1.transform.position.y;
-            save.enemy4Type = EPos1.tag;
+            save.enemy4Health = EPos4.GetComponent<UnitManager_scr>()._health;
+            save.enemy4Attack = EPos4.GetComponent<UnitManager_scr>()._damage;
+            save.enemy4XPos = EPos4.transform.position.x;
+            save.enemy4YPos = EPos4.transform.position.y;
+            save.enemy4Type = EPos4.tag;
+            save.enemy4Sprite = EPos4.GetComponent<SpriteRenderer>().sprite.ToString();
         }
         else
         {
@@ -893,6 +917,7 @@ public class SaveSystem_Script: MonoBehaviour
             save.enemy4XPos = 0;
             save.enemy4YPos = 0;
             save.enemy4Type = "None";
+            save.enemy4Sprite = "None";
         }
 
         return save;
@@ -916,6 +941,7 @@ public class EnemyInfo
     public float attack;
     public float positionX;
     public float positionY;
+    public string sprite;
 }
 
 public class Save
@@ -953,22 +979,26 @@ public class Save
     public float enemy1XPos;
     public float enemy1YPos;
     public string enemy1Type;
+    public string enemy1Sprite;
 
     public float enemy2Health;
     public float enemy2Attack;
     public float enemy2XPos;
     public float enemy2YPos;
     public string enemy2Type;
+    public string enemy2Sprite;
 
     public float enemy3Health;
     public float enemy3Attack;
     public float enemy3XPos;
     public float enemy3YPos;
     public string enemy3Type;
+    public string enemy3Sprite;
 
     public float enemy4Health;
     public float enemy4Attack;
     public float enemy4XPos;
     public float enemy4YPos;
     public string enemy4Type;
+    public string enemy4Sprite;
 }
