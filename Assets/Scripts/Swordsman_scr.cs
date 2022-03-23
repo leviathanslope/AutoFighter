@@ -13,10 +13,13 @@ public class Swordsman_scr : MonoBehaviour
 
     bool _UsedAction;
 
+    private Animator anim;
+
     // Start is called before the first frame update
     void Start()
     {
         _UsedAction = false;
+        anim = GetComponent<Animator>();
     }
 
     void Update()
