@@ -15,6 +15,9 @@ public class GameManager : MonoBehaviour
     public float _playerHealth = 20;
     public float _money = 20;
 
+    public AudioSource LossSFX;
+    public AudioSource WinSFX;
+
     string _typePos1;
     string _typePos2;
     string _typePos3;
@@ -250,6 +253,7 @@ public class GameManager : MonoBehaviour
             {
                 print("win");
                 _money += 20;
+                WinSFX.Play();
                 SceneManager.LoadScene("GameState");
             }
         }
@@ -269,6 +273,7 @@ public class GameManager : MonoBehaviour
                 print("lose");
                 _playerHealth -= 3;
                 _money += 20;
+                LossSFX.Play();
                 SceneManager.LoadScene("GameState");
             }
         }

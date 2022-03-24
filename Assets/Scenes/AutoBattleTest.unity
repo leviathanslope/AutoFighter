@@ -1217,6 +1217,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 645366360845899406, guid: 4060bbd5f70cedb42963f6a78f6fde4d,
+        type: 3}
+      propertyPath: LossSFX
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 645366360845899407, guid: 4060bbd5f70cedb42963f6a78f6fde4d,
         type: 3}
       propertyPath: m_Name
